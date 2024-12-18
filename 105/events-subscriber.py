@@ -12,7 +12,7 @@ async def subs():
     async with get_events_subscriber() as subscriber:
         async for event in subscriber:
             print(f"📬 Received event {event.event!r}")
-            seen_events.add(event.event.event)
+            seen_events.add(event.event)
             if len(seen_events) > 5:
                 break
 
