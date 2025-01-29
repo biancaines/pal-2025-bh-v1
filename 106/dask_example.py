@@ -16,8 +16,8 @@ async def say_goodbye(name):
 @flow(task_runner=DaskTaskRunner())
 async def greetings(names):
     for name in names:
-        say_hello.submit(name)
-        say_goodbye.submit(name)
+        await say_hello(name)
+        await say_goodbye(name)
 
 
 if __name__ == "__main__":
